@@ -79,11 +79,11 @@
               final: prev:
               let
                 _packages = import ./pkgs null {
-                  pkgs = prev;
+                  pkgs = final;
                   inherit inputs;
                 };
                 _legacyPackages = import ./pkgs "legacy" {
-                  pkgs = prev;
+                  pkgs = final;
                   inherit inputs;
                 };
               in
@@ -100,7 +100,7 @@
               };
             inSubTree = final: prev: {
               nur-xddxdd = import ./pkgs null {
-                pkgs = prev;
+                pkgs = final;
                 inherit inputs;
               };
             };
